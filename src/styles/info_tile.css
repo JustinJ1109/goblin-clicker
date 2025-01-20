@@ -1,0 +1,25 @@
+.info-tile-container {
+    /* background-color: #5f5e5e; */
+    margin: 5px;
+    border-radius: 5px;
+    width: 90px;
+    height: 50px;
+    display: flexbox;
+}
+
+.info-tile-container:hover {
+    /* background-color: #494848; */
+    transition: 0.3s;
+    cursor: default;
+    user-select: none;
+}
+
+.info {
+    display: flex;
+    flex-flow: column;
+}
+
+.info-title {
+    font-weight: 500;
+
+}
