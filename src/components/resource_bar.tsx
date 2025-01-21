@@ -1,9 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import InfoTile from "./info_tile";
 import { MaxResources, Resources } from "../schemas/schema";
-
-
-
 
 type Props = {
     resources: Resources
@@ -13,11 +10,12 @@ type Props = {
 const ResourceBar = ({ resources, maxResources }: Props) => {
 
     return (
-        <div>
-            <InfoTile infoType="food" data={`${resources.food} / ${maxResources.maxFood}`} />
-            <InfoTile infoType="lumber" data={`${resources.lumber} / ${maxResources.maxLumber}`} />
-            <InfoTile infoType="gold" data={`${resources.gold} / ${maxResources.maxGold}`} />
-
+        <div className="flex">
+            <InfoTile infoType="food" data={`${resources.food || 0} / ${maxResources.food}`} />
+            <InfoTile infoType="lumber" data={`${resources.lumber || 0} / ${maxResources.lumber}`} />
+            <InfoTile infoType="gold" data={`${resources.gold || 0} / ${maxResources.gold}`} />
+            <InfoTile infoType="goblins" data={`${resources.goblins.length} / ${maxResources.goblins}`} />
+            <InfoTile infoType="houses" data={`${resources.houses} / ${maxResources.houses}`} />
         </div>
     )
 }

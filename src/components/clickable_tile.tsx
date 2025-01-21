@@ -1,5 +1,5 @@
 import React, { MouseEventHandler } from "react"
-import { ClickerGenerator, Resources } from "../schemas/schema"
+import { Resources } from "../schemas/schema"
 
 
 type Props = {
@@ -11,7 +11,7 @@ type Props = {
 
 const ClickableTile = ({ text, subText = "", onClick, cost }: Props) => {
     return (
-        <div className="unselectable-text rounded-md bg-slate-500 h-12 hover:bg-slate-600 m-5" onClick={onClick}>
+        <div className="unselectable-text rounded-md bg-slate-500 hover:bg-slate-600 min-h-20 m-5" onClick={onClick}>
             {text} {subText && `(${subText})`}
             {cost &&
                 Object.keys(cost).map((k, i) => {

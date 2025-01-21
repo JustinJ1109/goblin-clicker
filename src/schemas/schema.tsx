@@ -2,18 +2,24 @@ export type Resources = {
     lumber: number,
     food: number,
     gold: number,
-    goblins: []
+    goblins: object[],
+    houses?: number,
 }
 
 export type MaxResources = {
-    maxGold: number,
-    maxLumber: number,
-    maxFood: number,
-    maxGoblins: number
+    gold: number,
+    lumber: number,
+    food: number,
+    goblins: number,
+    houses: number
 }
 
 export interface ClickerGenerator {
-    perTick: number,
+    yieldPerTick?: Partial<Record<keyof Resources, number>>,
     count: number,
-    cost: Partial<Record<keyof Resources, number>>
+    cost: Partial<Record<keyof Resources, number>>,
+    multiplier?: number,
+    upkeepPerTick?: Partial<Record<keyof Resources, number>>
+    maxIncreaseOnBuild?: Partial<Record<keyof Resources, number>>,
+    yieldOnBuild?: Partial<Record<keyof Resources, number>>
 }
